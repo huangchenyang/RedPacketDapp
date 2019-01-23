@@ -1,0 +1,41 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Frontend for the CaiShen dApp",
+  "private": true,
+  "scripts": {
+    "build": "nwb build-preact-app",
+    "clean": "nwb clean-app",
+    "start": "nwb serve-preact-app",
+    "test": "nwb test-preact",
+    "test:coverage": "nwb test-preact --coverage",
+    "test:watch": "nwb test-preact --server"
+  },
+  "eslintConfig": {
+    "extends": "standard-preact",
+    "rules": {
+      "jsx-quotes": [
+        "error",
+        "prefer-double"
+      ]
+    }
+  },
+  "dependencies": {
+    "@ibm/type": "^0.5.3",
+    "preact": "^8.2.7",
+    "preact-compat": "^3.18.0",
+    "react-flatpickr": "^3.6.3",
+    "truffle-contract": "^3.0.2",
+    "web3": "^0.20.4"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-standard-preact": "^1.1.6",
+    "nwb": "0.23.x",
+    "nwb-less": "^0.6.1",
+    "preact-router": "^2.6.0"
+  },
+  "author": "Koh Wei Jie",
+  "license": "MIT",
+  "repository": "https://github.com/weijiekoh/caishen"
+}

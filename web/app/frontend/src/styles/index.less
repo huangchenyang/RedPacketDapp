@@ -1,0 +1,255 @@
+@import (once, css) "pure/base-min.css";
+@import (once, css) "pure/forms-min.css";
+@import (once, css) "pure/buttons-min.css";
+@import (once, css) "pure/tables-min.css";
+@import (once, css) "pure/grids-responsive.css";
+@import (once, css) "ibm-type.css";
+@import (once, less) "colours.less";
+@import (once, less) "spinner.less";
+@import (once, less) "constants.less";
+@import (once, less) "nav.less";
+@import (once, less) "login.less";
+@import (once, less) "home.less";
+@import (once, less) "give.less";
+@import (once, less) "redeem.less";
+@import (once, less) "about.less";
+@import (once, less) "gift_select.less";
+
+* {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+    background-image: url(/static/images/bg.png);
+}
+
+.contentbox table{
+    background:white;
+    @media (max-width: @small_screen_width) {
+        td{
+            padding:0.5em;
+        }
+    }
+}
+
+h1, h2, h3, h4, h5, h6{
+    line-height: 1em;
+}
+
+li{
+    margin-bottom:1.5em;
+}
+
+.pure-g {
+    text-align:left;
+    display: inline-block;
+    width: 768px;
+    @media (max-width: 767px) {
+        width:96% !important;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-left:2%;
+        margin-right:2%;
+    }
+}
+
+#app{
+    text-align:center;
+    margin:0;
+    width:100%;
+    max-width:100%;
+}
+
+.noweb3{
+    text-align:center;
+}
+
+hr{
+    color: @hr;
+    border-color: @hr;
+    background-color: @hr;
+    border-style:solid;
+    height:0.3rem;
+    width:5rem;
+    margin:2em;
+    margin-left:0;
+}
+
+a{
+    color:@brand-01;
+    &:hover{
+        color: @brand-02;
+    }
+}
+
+
+button{
+    user-select:none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    &:active{
+        margin-left: 1px;
+        margin-right: -1px;
+        margin-top: 1px;
+        margin-bottom: -1px;
+    }
+}
+
+.button-success{
+    background: @support-02;
+    color:white;
+}
+
+.pure-form {
+    .invalid{
+        border-color:@support-01 !important;
+    }
+}
+
+.error{
+    color:@support-01;
+}
+
+.input_component{
+    margin-bottom:1em !important;
+
+    textarea {
+        height:5em;
+    }
+
+    textarea, input {
+        width: 95%;
+    }
+
+    .error{
+        margin-top:0.75em;
+        display:block;
+    }
+}
+
+.account_info{
+    pre{
+        display:inline;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+    }
+}
+
+.transaction_success{
+    .success{
+        color: @support-02;
+    }
+
+    em{
+        font-weight:bold;
+        font-style:normal;
+        font-size:1.25em;
+    }
+}
+
+.pending_transaction{
+    float:left;
+    width:100%;
+
+    .text, .spinner{
+        float:left;
+    }
+
+    .text{
+        @media (max-width: @small_screen_width) {
+            float:none;
+        }
+        p{
+            margin-top:0;
+        }
+    }
+
+    .spinner{
+        margin-top:0;
+        margin-left:1em;
+        background-color: @spinner;
+        @media (max-width: @small_screen_width) {
+            margin-left:0em;
+            margin-bottom:1em;
+        }
+    }
+}
+
+.footer{
+    text-align:center;
+    font-size:0.75em;
+    margin-top:5em;
+    p{
+        margin:0px;
+    }
+}
+
+.manual_redeem{
+    textarea{
+        width:100%;
+        height:200px;
+    }
+}
+
+.contentbox{
+    z-index:999;
+    background-color:@contentbox_bg;
+    border-radius:2em;
+    margin:1em;
+    padding:2em;
+    margin-top:3em;
+    text-align:left;
+    color:black;
+
+    @media (min-width: @medium_screen_width) {
+        max-width:@medium_screen_width;
+        margin:auto;
+        margin-top:2.5em;
+    }
+
+    @media (max-width: @small_screen_width) {
+        padding:0.75em;
+        margin:10px;
+        margin-top:2em;
+    }
+
+    .contentbox_inner{
+        background-color:@contentbox_bg_inner;
+        padding:2em;
+        border:solid 3px white;
+        border-radius:2em;
+
+        @media (max-width: @small_screen_width) {
+            padding:1em;
+        }
+
+        .concept{
+            text-align:center;
+            img{
+                @media (max-width: @medium_screen_width) {
+                    width:70%;
+                    /*margin-left:15%;*/
+                    /*margin-right:auto;*/
+                }
+            }
+        }
+    }
+}
+
+.fadein{
+    animation: fadein_anim 2s;
+}
+
+@keyframes fadein_anim{
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

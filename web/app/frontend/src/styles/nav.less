@@ -1,0 +1,129 @@
+.nav{
+    user-select:none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    position: fixed;
+    top: 0;
+    width:100%;
+    background:rgba(255, 255, 255, 0);
+    height:0;
+    z-index:99999;
+
+    img{
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
+    }
+
+    .logo {
+        float: left;
+        display:none;
+        z-index:9999;
+
+        a{
+            z-index:9999;
+
+            img{
+                margin-top:1em;
+                margin-left:1em;
+                height:200px;
+                z-index:9999;
+
+                &:active{
+                    padding-left: 1px;
+                    padding-right: -1px;
+                    padding-top: 1px;
+                    padding-bottom: -1px;
+                }
+            }
+        }
+
+        @media (min-width: @large_screen_width) {
+            display:block;
+        }
+    }
+
+    .desktop{
+        float: right;
+        width:20%;
+        min-width:285px;
+        z-index:9999;
+
+        a{
+            float:left;
+            margin-left:1.5em;
+            display:block;
+            cursor:pointer;
+
+            img{
+                height:190px;
+            }
+
+            &:first-of-type{
+                margin-left:0;
+            }
+        }
+        img:active{
+            margin-left: 1px;
+            margin-right: -1px;
+            margin-top: 1px;
+            margin-bottom: -1px;
+        }
+    }
+
+    .mobile{
+        display:none;
+    }
+
+    @media (max-width: @large_screen_width) {
+        .desktop{
+            display:none;
+        }
+
+        .mobile{
+            cursor:pointer;
+            display:block;
+            background:@link_bg;
+            float:left;
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            min-width:100%;
+            height:25px;
+            padding-top:10px;
+            padding-bottom:10px;
+
+            @media (max-width: @small_screen_width) {
+                height:22px;
+                padding-top:8px;
+                padding-bottom:8px;
+            }
+
+            a{
+                color:white;
+                margin-left:20px;
+                text-decoration:none;
+                font-size:1.2em;
+
+                &:first-of-type{
+                    margin-left:0;
+                }
+
+                @media (max-width: @small_screen_width) {
+                    font-size:0.95em;
+                    margin-left:15px;
+                }
+            }
+        }
+        
+         .zh a{
+            margin-left:40px;
+        }
+    }
+}

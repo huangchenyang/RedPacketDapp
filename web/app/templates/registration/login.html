@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8">
+        {% if not DEBUG %}
+            <link rel="stylesheet" href="{% static "/app.css" %}" />
+        {% endif %}
+    </head>
+    <body>
+        <div class="ibm ibm-type-3" id="app">
+            <div class="pure-g login">
+                <form method="post" action="{% url 'login' %}" class="pure-form">
+
+                    {% csrf_token %}
+
+                    <input type="hidden" name="next" value="/" />
+                    <input type="hidden" name="username" value="demo" autofocus required />
+
+                    {% if form.errors %}
+                        <p>Your password is incorrect. Please try again.</p>
+                    {% endif %}
+
+                    <h2>Please log in.</h2>
+
+                    <div class="pure-u-1 password">
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="password"
+                            autofocus
+                            required />
+                    </div>
+                    
+                    <div class="pure-u-1">
+                        <input class="pure-button pure-button-primary button-large" 
+                           id="submit_btn"
+                           type="submit" value="Login" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

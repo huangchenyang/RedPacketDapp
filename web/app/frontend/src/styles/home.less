@@ -1,0 +1,59 @@
+.home{
+    .landing{
+        height:80vh;
+        .chevron, .logo{
+            user-select:none;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .logo{
+            margin-top:30vh;
+            @media (max-width: @medium_screen_width) {
+                margin-top:30%;
+            }
+            img{
+                width:350px;
+                max-width:50%;
+                min-width:250px;
+            }
+        }
+
+        @keyframes Bob {
+            0%{
+                bottom:0;
+            }
+            50%{
+                bottom:10px;
+            }
+            100%{
+                bottom:0px;
+            }
+        }
+
+        .chevron{
+            animation: Bob 1.5s ease-in-out infinite;
+            position:absolute;
+            bottom:0;
+            width:100%;
+            text-align:center;
+            cursor:pointer;
+            margin-bottom:1em;
+
+            img{
+                width:70px;
+                @media (max-width: @medium_screen_width) {
+                    width:30px;
+                }
+            }
+        }
+    }
+
+    .main_anchor{
+        display:block;
+        height:0px;
+    }
+}
